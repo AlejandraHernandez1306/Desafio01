@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Desafío Práctico - UDB"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="40dp"
+        android:textColor="#2E7D32" />
+
+    <Button
+        android:id="@+id/btnPromedio"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Ejercicio 1: Promedio del Estudiante"
+        android:textSize="16sp"
+        android:layout_marginBottom="15dp" />
+
+    <Button
+        android:id="@+id/btnSalario"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Ejercicio 2: Descuentos al Salario"
+        android:textSize="16sp"
+        android:layout_marginBottom="15dp" />
+
+    <Button
+        android:id="@+id/btnCalculadora"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Ejercicio 3: Calculadora Básica"
+        android:textSize="16sp" />
+
+</LinearLayout>
