@@ -1,174 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="16dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/tvTitulo"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Promedio del Estudiante"
             android:textSize="22sp"
             android:textStyle="bold"
-            android:gravity="center"
-            android:layout_marginBottom="20dp"
-            android:textColor="#2E7D32" />
+            android:textColor="#2E7D32"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre del Estudiante:"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp" />
 
         <EditText
             android:id="@+id/etNombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nombre del estudiante"
-            android:inputType="textPersonName"
-            android:layout_marginBottom="10dp" />
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:hint="Ingrese el nombre"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvNombre"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
 
         <!-- Nota 1 -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tvNota1"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
+            android:text="Nota 1 (0-10):"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            app:layout_constraintTop_toBottomOf="@id/etNombre"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp" />
 
-            <EditText
-                android:id="@+id/etNota1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Nota 1 (0-10)"
-                android:inputType="numberDecimal"
-                android:layout_marginEnd="10dp" />
+        <EditText
+            android:id="@+id/etNota1"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:hint="0.0"
+            android:inputType="numberDecimal"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvNota1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/etPonderacion1"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp" />
 
-            <EditText
-                android:id="@+id/etPonderacion1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Ponderación 1 (%)"
-                android:inputType="numberDecimal" />
-        </LinearLayout>
+        <EditText
+            android:id="@+id/etPonderacion1"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:hint="Pond. %"
+            android:inputType="numberDecimal"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvNota1"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
 
         <!-- Nota 2 -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tvNota2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
+            android:text="Nota 2 (0-10):"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            app:layout_constraintTop_toBottomOf="@id/etNota1"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
 
-            <EditText
-                android:id="@+id/etNota2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Nota 2 (0-10)"
-                android:inputType="numberDecimal"
-                android:layout_marginEnd="10dp" />
+        <EditText
+            android:id="@+id/etNota2"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:hint="0.0"
+            android:inputType="numberDecimal"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvNota2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/etPonderacion2"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp" />
 
-            <EditText
-                android:id="@+id/etPonderacion2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Ponderación 2 (%)"
-                android:inputType="numberDecimal" />
-        </LinearLayout>
+        <EditText
+            android:id="@+id/etPonderacion2"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:hint="Pond. %"
+            android:inputType="numberDecimal"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvNota2"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
 
         <!-- Nota 3 -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tvNota3"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
+            android:text="Nota 3 (0-10):"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            app:layout_constraintTop_toBottomOf="@id/etNota2"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
 
-            <EditText
-                android:id="@+id/etNota3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Nota 3 (0-10)"
-                android:inputType="numberDecimal"
-                android:layout_marginEnd="10dp" />
+        <EditText
+            android:id="@+id/etNota3"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:hint="0.0"
+            android:inputType="numberDecimal"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvNota3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/etPonderacion3"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp" />
 
-            <EditText
-                android:id="@+id/etPonderacion3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Ponderación 3 (%)"
-                android:inputType="numberDecimal" />
-        </LinearLayout>
+        <EditText
+            android:id="@+id/etPonderacion3"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:hint="Pond. %"
+            android:inputType="numberDecimal"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvNota3"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
 
         <!-- Nota 4 -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tvNota4"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
+            android:text="Nota 4 (0-10):"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            app:layout_constraintTop_toBottomOf="@id/etNota3"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
 
-            <EditText
-                android:id="@+id/etNota4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Nota 4 (0-10)"
-                android:inputType="numberDecimal"
-                android:layout_marginEnd="10dp" />
+        <EditText
+            android:id="@+id/etNota4"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:hint="0.0"
+            android:inputType="numberDecimal"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvNota4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/etPonderacion4"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp" />
 
-            <EditText
-                android:id="@+id/etPonderacion4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Ponderación 4 (%)"
-                android:inputType="numberDecimal" />
-        </LinearLayout>
+        <EditText
+            android:id="@+id/etPonderacion4"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:hint="Pond. %"
+            android:inputType="numberDecimal"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvNota4"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
 
         <!-- Nota 5 -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tvNota5"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
+            android:text="Nota 5 (0-10):"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            app:layout_constraintTop_toBottomOf="@id/etNota4"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
 
-            <EditText
-                android:id="@+id/etNota5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Nota 5 (0-10)"
-                android:inputType="numberDecimal"
-                android:layout_marginEnd="10dp" />
+        <EditText
+            android:id="@+id/etNota5"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:hint="0.0"
+            android:inputType="numberDecimal"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvNota5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/etPonderacion5"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp" />
 
-            <EditText
-                android:id="@+id/etPonderacion5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Ponderación 5 (%)"
-                android:inputType="numberDecimal" />
-        </LinearLayout>
+        <EditText
+            android:id="@+id/etPonderacion5"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:hint="Pond. %"
+            android:inputType="numberDecimal"
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tvNota5"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
 
         <Button
             android:id="@+id/btnCalcular"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="60dp"
             android:text="Calcular Promedio"
-            android:textSize="16sp"
-            android:layout_marginBottom="20dp" />
+            android:textSize="18sp"
+            android:backgroundTint="#4CAF50"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@id/etNota5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp" />
 
         <TextView
             android:id="@+id/tvResultado"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text=""
             android:textSize="16sp"
-            android:background="#F0F0F0"
-            android:padding="15dp"
-            android:visibility="gone" />
+            android:textColor="#333333"
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/btnCalcular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

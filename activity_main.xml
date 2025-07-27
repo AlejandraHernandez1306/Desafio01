@@ -1,42 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
-    android:gravity="center_vertical">
+    android:background="#F5F5F5"
+    tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Desafío Práctico - UDB"
+        android:text="Desafío Práctico DSM"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="40dp"
-        android:textColor="#2E7D32" />
+        android:textColor="#2E7D32"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="80dp" />
+
+    <TextView
+        android:id="@+id/tvSubtitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona un ejercicio"
+        android:textSize="16sp"
+        android:textColor="#666666"
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
 
     <Button
         android:id="@+id/btnPromedio"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="60dp"
-        android:text="Ejercicio 1: Promedio del Estudiante"
+        android:text="Ejercicio 1: Promedio Estudiante"
         android:textSize="16sp"
-        android:layout_marginBottom="15dp" />
+        android:backgroundTint="#4CAF50"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitulo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp" />
 
     <Button
         android:id="@+id/btnSalario"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="60dp"
-        android:text="Ejercicio 2: Descuentos al Salario"
+        android:text="Ejercicio 2: Descuentos Salario"
         android:textSize="16sp"
-        android:layout_marginBottom="15dp" />
+        android:backgroundTint="#2196F3"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/btnPromedio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp" />
 
     <Button
         android:id="@+id/btnCalculadora"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:text="Ejercicio 3: Calculadora Básica"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:backgroundTint="#FF9800"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/btnSalario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
